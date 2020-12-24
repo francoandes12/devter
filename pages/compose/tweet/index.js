@@ -24,7 +24,7 @@ export default function ComposeTweet() {
   const router = useRouter();
   const [message, setMessage] = useState("");
   const [status, setStatus] = useState(COMPOSE_STATES.USER_NOT_KNOWN);
-  const [drag, setDrag] = useState(DRAG_IMAGE_STATES);
+  const [drag, setDrag] = useState(DRAG_IMAGE_STATES.NONE);
   const [task, setTask] = useState(null);
   const [imgURL, setImgURL] = useState(null);
   useEffect(() => {
