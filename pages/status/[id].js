@@ -2,6 +2,7 @@ import Devit from "@c/Devit";
 import { firestore } from "firebase/admin";
 import { useRouter } from "next/router";
 import Loader from "react-loader-spinner";
+import Button from "@c/Buttons";
 export default function DevitPage(props) {
   const router = useRouter();
   if (router.isFallback)
@@ -14,10 +15,13 @@ export default function DevitPage(props) {
         timeout={3000}
       />
     );
+  const handleVolver = () => {
+    router.push("/");
+  };
   return (
     <>
       <Devit {...props} />
-      <style jsx>{``}</style>
+      <Button onClick={handleVolver}>volver al inicio</Button>
     </>
   );
 }

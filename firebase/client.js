@@ -24,6 +24,9 @@ export const loginWithGitHub = () => {
   const githubProvider = new firebase.auth.GithubAuthProvider();
   return firebase.auth().signInWithPopup(githubProvider);
 };
+export const logout = () => {
+  firebase.auth().signOut();
+};
 export const addDevit = ({ avatar, content, userId, userName, img }) => {
   return db.collection("devits").add({
     avatar,

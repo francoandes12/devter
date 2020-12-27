@@ -5,12 +5,14 @@ import { listenLatestDevits } from "firebase/client";
 import Link from "next/link";
 import Create from "components/Icons/Create";
 import Home from "components/Icons/Home";
+import Logout from "components/Icons/Logout";
 import Search from "components/Icons/Search";
 import { colors } from "styles/theme";
 import Head from "next/head";
 
 export default function HomePage() {
   const [timeline, setTimeline] = useState([]);
+
   const user = useUser();
 
   useEffect(() => {
@@ -20,6 +22,8 @@ export default function HomePage() {
     }
     return () => unsubscribe && unsubscribe();
   }, [user]);
+  timeline.length > 0 &&
+    localStorage.setItem("devits", JSON.stringify(timeline));
 
   return (
     <>
@@ -59,6 +63,11 @@ export default function HomePage() {
         <Link href="/compose/tweet">
           <a>
             <Create width={32} height={32} stroke="#09f" />
+          </a>
+        </Link>
+        <Link href="/user">
+          <a>
+            <Logout width={32} height={32} stroke="#09f" user={user} />
           </a>
         </Link>
       </nav>

@@ -23,6 +23,7 @@ export default css`
     main {
       height: 90vh;
       width: ${breakpoints.mobile};
+      padding-left: 14px;
     }
   }
 `;

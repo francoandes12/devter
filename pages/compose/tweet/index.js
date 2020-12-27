@@ -76,6 +76,9 @@ export default function ComposeTweet() {
     setTask(task);
   };
   const isButtonDisabled = !message.length || status === COMPOSE_STATES.LOADING;
+  const handleVolver = () => {
+    router.push("/");
+  };
   return (
     <>
       <Head>
@@ -107,6 +110,7 @@ export default function ComposeTweet() {
           </div>
         </form>
       </section>
+      <Button onClick={handleVolver}>Volver al inicio</Button>
       <style jsx>{`
         div {
           padding: 15px;

@@ -7,6 +7,7 @@ export const colors = {
   secondary: "#0D4E80",
   black: "#00030D",
   white: "#F8FCFF",
+  gray: "#9b9b9b",
 };
 export const breakpoints = {
   mobile: "520px",
