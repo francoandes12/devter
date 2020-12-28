@@ -25,6 +25,15 @@ export default function Usuario() {
       <Button onClick={handleLogout}>Cerrar sesion</Button>
       <h3>o volver al home?</h3>
       <Button onClick={handleVolver}>Home</Button>
+      <div id="espacio"></div>
+      <style jsx>{`
+        img {
+          width: 100%;
+        }
+        #espacio {
+          margin-bottom: 30px;
+        }
+      `}</style>
     </>
   );
 }
